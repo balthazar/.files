@@ -6,6 +6,8 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
+require("widgets");
+require("volume")
 
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
@@ -28,8 +30,9 @@ do
 end
 
 beautiful.init("/home/apercu/.config/awesome/theme.lua")
+icon_dir = awful.util.getdir("config") .. "/icons/"
 
-terminal = "xterm"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -82,7 +85,6 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "open terminal", terminal }
                                   }
                         })
-
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
@@ -91,8 +93,62 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = wibox.widget.textbox()
+mytextclock:set_font("Visitor TT1 BRK 10");
+vicious.register(mytextclock, vicious.widgets.date, "%d %b ", 60)
+
+--/// CPU Widget ///
+cpuicon = wibox.widget.imagebox()
+cpuicon:set_image(icon_dir .. "cpu.png")
+cpuperc = wibox.widget.textbox()
+cpuperc:set_font("Visitor TT1 BRK 10");
+vicious.register(cpuperc, vicious.widgets.cpu, ' '..focus_col..'$1'..null_col..' ', 1)
+
+--/// Mem Widget ///
+memicon = wibox.widget.imagebox()
+memicon:set_image(icon_dir .. "mem.png")
+memwidget = wibox.widget.textbox()
+memwidget:set_font("Visitor TT1 BRK 10");
+vicious.register(memwidget, vicious.widgets.mem, ' '..focus_col..'$1'..null_col..' $2MB', 17)
+
+--/// Battery widget ///
+baticon = wibox.widget.imagebox()
+baticon:set_image(icon_dir .. "bat_full_01.png")
+batwidget = wibox.widget.textbox()
+batwidget:set_font("Visitor TT1 BRK 10");
+vicious.register(batwidget, vicious.widgets.bat, ' '..focus_col..'$2%'..null_col..' $1', 23, "BAT0")
+
+--/// Temp widget ///
+tempicon = wibox.widget.imagebox()
+tempicon:set_image(icon_dir .. "temp.png")
+tempwidget1 = wibox.widget.textbox()
+tempwidget1:set_font("Visitor TT1 BRK 10");
+tempwidget2 = wibox.widget.textbox()
+tempwidget2:set_font("Visitor TT1 BRK 10");
+vicious.register(tempwidget1, vicious.widgets.thermal, ' '..focus_col..'$1'..null_col..'', 43, "thermal_zone0")
+vicious.register(tempwidget2, vicious.widgets.thermal, ' '..focus_col..'$1'..null_col..' °C', 43, "thermal_zone1")
+
+--/// Net widget ///
+neticon = wibox.widget.imagebox()
+netwidget = wibox.widget.imagebox()
+vicious.register(netwidget, vicious.widgets.net, 
+    function (widget, args)
+        if args["{eno1 carrier}"] == 1
+        then 
+            neticon:set_image(icon_dir .. "usb.png")
+            return ' U '..focus_col..args["{eno1 up_kb}"]..null_col..' D '..focus_col..args["{eno1 down_kb}"]..null_col..''
+        elseif args["{wlo1 carrier}"] == 1 
+        then 
+            neticon:set_image(icon_dir .. "wifi_01.png")
+            return ' U '..focus_col..args["{wlo1 up_kb}"]..null_col..' D '..focus_col..args["{wlo1 down_kb}"]..null_col..''
+        else 
+            neticon:set_image(icon_dir .. "empty.png")
+            return  'Network Disabled '
+        end
+    end, 1)
+
+sep = wibox.widget.textbox()
+sep:set_text(' | ')
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -108,39 +164,6 @@ mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
                     )
 mytasklist = {}
-mytasklist.buttons = awful.util.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  -- Without this, the following
-                                                  -- :isvisible() makes no sense
-                                                  c.minimized = false
-                                                  if not c:isvisible() then
-                                                      awful.tag.viewonly(c:tags()[1])
-                                                  end
-                                                  -- This will also un-minimize
-                                                  -- the client, if needed
-                                                  client.focus = c
-                                                  c:raise()
-                                              end
-                                          end),
-                     awful.button({ }, 3, function ()
-                                              if instance then
-                                                  instance:hide()
-                                                  instance = nil
-                                              else
-                                                  instance = awful.menu.clients({ width=250 })
-                                              end
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                              if client.focus then client.focus:raise() end
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                              if client.focus then client.focus:raise() end
-                                          end))
 
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
@@ -156,9 +179,6 @@ for s = 1, screen.count() do
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
-    -- Create a tasklist widget
-    mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
-
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
 
@@ -171,6 +191,25 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(cpuicon)
+    right_layout:add(cpuperc)
+    right_layout:add(sep)
+    right_layout:add(memicon)
+    right_layout:add(memwidget)
+    right_layout:add(sep)
+    right_layout:add(tempicon)
+    right_layout:add(tempwidget1)
+    right_layout:add(tempwidget2)
+    right_layout:add(sep)
+    right_layout:add(neticon)
+    right_layout:add(netwidget)
+    right_layout:add(sep)
+    right_layout:add(volicon)
+    right_layout:add(volumetext)
+    right_layout:add(sep)
+    right_layout:add(baticon)
+    right_layout:add(batwidget)
+    right_layout:add(sep)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -331,6 +370,7 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+                     size_hints_honor = false,
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },

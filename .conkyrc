@@ -1,0 +1,68 @@
+background yes
+override_utf8_locale no
+
+use_xft yes
+xftfont Visitor TT1 BRK:size=8
+text_buffer_size 2048
+update_interval 1.0
+total_run_times 0
+
+own_window yes
+own_window_type override
+own_window_class Conky
+own_window_colour 191919
+own_window_argb_visual yes
+own_window_argb_value 255
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+
+minimum_size  500 350
+maximum_width 500
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+default_color 666
+default_shade_color fed053
+default_outline_color 7f8f9f
+
+alignment middle_middle
+gap_x 0
+gap_y 0
+
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+color1 286f8a
+
+border_inner_margin 5
+border_outer_margin 5
+
+own_window_argb_visual no
+own_window_argb_value 200
+
+lua_load ~/.conky/widgets.lua 
+lua_draw_hook_pre main_first
+
+TEXT
+${voffset 3}${goto 30}CPU ${color1}${running_processes}/${processes}$color
+${goto 30}${machine} ${freq_g}GHz
+${voffset 1}${goto 30}${top cpu 1} ${color1}${top name 1}${color}
+${goto 30}${top cpu 2} ${color1}${top name 2}${color}
+${goto 30}${top cpu 3} ${color1}${top name 3}${color}
+${voffset 4}${goto 30}${loadavg}
+${goto 30}$kernel
+${voffset -82}${alignr 20}MEM $color1$memmax$color
+${alignr 20}Free: $color1$memfree$color
+${voffset 1}${goto 400}${top_mem mem_res 1} ${color1}${top_mem name 1}${color}
+${goto 400}${top_mem mem_res 2} ${color1}${top_mem name 2}${color}
+${goto 400}${top_mem mem_res 3} ${color1}${top_mem name 3}${color}
+${voffset 3}${alignr 20}Cache: $color1${cached}$color
+${alignr 20}Buff: $color1$buffers$color
+${voffset 12}${color1}${mpd_album}${color}
+${voffset 12}${alignr}${color1}${mpd_elapsed}${color} - ${mpd_length}

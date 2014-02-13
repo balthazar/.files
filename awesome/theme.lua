@@ -2,7 +2,7 @@ theme = {}
 theme.wallpaper_cmd = { " " }
 
 theme.font          = "Visitor TT1 BRK 8"
-theme.wallpaper     = "/home/apercu/Images/nyblue.jpg"
+theme.wallpaper     = "/home/apercu/Images/arch2.jpg"
 
 --Custom
 themedir            = "~/.config/awesome/themes"
@@ -17,7 +17,7 @@ theme.bg_normal = "#202020"
 theme.bg_focus  = "#0f0f0f"
 theme.bg_urgent = "#ffc0c0"
 
-theme.border_width  = 0
+theme.border_width  = 1
 theme.border_normal = "#121212"
 theme.border_focus  = theme.fg_focus
 theme.border_marked = "#000000"
