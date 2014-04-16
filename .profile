@@ -1,23 +1,3 @@
-#         .-'--.
-#       .'      '.
-#      /     _    `-.
-#     /      .\-     \,  ,
-#    ;       .-|-'    \####,
-#    |,       .-|-'    ;####
-#   ,##         `     ,|###"
-# #,####, "#,        ,#|^;#
-# `######  `#####,|##" |`)|      ----------------
-#  `#####    ```o\`\o_.| ;\      Perfect .profile
-#   (-`\#,    .-'` |`  : `;      ----------------
-#   `\ ;\#,         \   \-'      1.0
-#     )( \#    C,_   \   ;
-#     (_,  \  /   `'./   |
-#       \  / | .-`'--'`. |
-#        | ( \   ,  /_,  |
-#        \    `   ``     /
-#         '-.__     // .'
-#              `'`.__.'
-
 # Custom
 # ------
 chmod 000 ~/Library/Caches/Google/Chrome/Default/Media\ Cache 2> /dev/null
@@ -26,20 +6,13 @@ chmod 000 ~/Library/Caches/com.google.Software 2> /dev/null
 
 # Path
 # ----
-export PATH=/usr/local/bin:$PATH
-export PATH=~/bin:$PATH
-export PATH=~/.gems/bin:$PATH
-export PATH=~/ruby-2.1.0/bin:$PATH
 export PATH=$HOME/.brew/bin:$PATH
 export PATH=$HOME/.brew/opt/ruby/bin:$PATH
 export PATH=$HOME/.brew/opt/nginx/sbin:$PATH
-export SECRET_KEY_BASE="!#zavatta_secret_string!"
-export PATH="~/Documents/ImageMagick-6.8.8/bin:$PATH"
-export PATH=~/.brew/bin:$PATH
+export PATH=$HOME/.gems/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH=$PATH:$HOME/mamp/mysql/bin
-LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
-export LD_LIBRARY_PATH
-export GEM_HOME=~/.gems
 
 # Variables
 # ---------
@@ -49,6 +22,8 @@ export MAIL42='bgronon@student.42.fr'
 export USER42='bgronon'
 export LANG="en_GB.UTF-8"
 export LANGUAGE="en_GB:en"
+export SECRET_KEY_BASE="!#zavatta_secret_string!"
+export GEM_HOME=$HOME/.gems
 
 # Aliases
 # -------
@@ -87,5 +62,3 @@ alias lemin="cd ~/Rendu/ALGO-1-001/lemin"
 alias sh2="cd ~/Rendu/UNIX-1-001/sh2"
 alias sh3="cd ~/Rendu/UNIX-1-001/sh3"
 alias 42sh="cd ~/Rendu/UNIX-1-001/42sh"
-export ODIN_ROOT=/nfs/zfs-student/users/2013/bgronon/bin
-export PATH=/nfs/zfs-student/users/2013/bgronon/bin/bin:$PATH

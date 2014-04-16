@@ -1,23 +1,3 @@
-#         .-'--.
-#       .'      '.
-#      /     _    `-.
-#     /      .\-     \,  ,
-#    ;       .-|-'    \####,
-#    |,       .-|-'    ;####
-#   ,##         `     ,|###"
-# #,####, "#,        ,#|^;#
-# `######  `#####,|##" |`)|      --------------
-#  `#####    ```o\`\o_.| ;\      Perfect .zshrc
-#   (-`\#,    .-'` |`  : `;      --------------
-#   `\ ;\#,         \   \-'      1.0
-#     )( \#    C,_   \   ;
-#     (_,  \  /   `'./   |
-#       \  / | .-`'--'`. |
-#        | ( \   ,  /_,  |
-#        \    `   ``     /
-#         '-.__     // .'
-#              `'`.__.'
-
 # Yep
 # ---
 ZSH=$HOME/.oh-my-zsh
@@ -46,4 +26,3 @@ export PATH=/nfs/zfs-student/users/2013/bgronon/bin/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 source $HOME/.gitprompt
-alias lockscreen_block="lockscreen && sleep 2 && /Volumes/DATA/42/madagascar"
