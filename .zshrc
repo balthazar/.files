@@ -18,11 +18,9 @@ export PATH=/usr/bin:$PATH
 export PATH=/sbin:$PATH
 export PATH=/bin:$PATH
 export PATH=~/bin:$PATH
-export ODIN_ROOT=/nfs/zfs-student/users/2013/bgronon/bin
-export PATH=/nfs/zfs-student/users/2013/bgronon/bin/bin:$PATH
 
 # Source
 # ------
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
-source $HOME/.gitprompt
+source $HOME/git/myawesome-config/.gitprompt
