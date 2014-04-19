@@ -20,9 +20,9 @@ colorscheme solarized
 filetype plugin indent on
 syntax on
 
-set expandtab
-set shiftwidth=2
-set tabstop=2
+set noexpandtab
+set shiftwidth=4
+set tabstop=4
 set sidescrolloff=15
 set colorcolumn=80
 set noswapfile

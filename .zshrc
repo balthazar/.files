@@ -8,6 +8,9 @@ plugins=(git)
 
 # Path
 # ----
+export PATH=$HOME/.brew/bin:$PATH
+export PATH=$HOME/.brew/opt/ruby/bin:$PATH
+export PATH=$HOME/.brew/opt/nginx/sbin:$PATH
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/git/bin:$PATH
