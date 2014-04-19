@@ -5,7 +5,7 @@ cd ~/git
 git clone git@github.com:Apercu/myawesome-config.git
 cd ~
 
-printf "\n[Creating symlinks and configs]...\n"
+printf "\n[Creating Symlinks & Configs]...\n"
 /bin/ln -s git/my-awesome-config/.profile
 /bin/ln -s git/my-awesome-config/.vimrc
 /bin/ln -s git/my-awesome-config/.zshrc
@@ -34,6 +34,8 @@ rm -rf ~/node-latest-install
 npm install -g grunt
 npm install -g grunt-cli
 
-printf "\n[Brews]\n"
+printf "\n[Brews & Gems]\n"
 brew install tig
 brew install wget
+brew install ruby
+gem install compass
