@@ -9,7 +9,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'SirVer/ultisnips'
-Bundle 'msanders/snipmate.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'lukaszb/vim-web-indent'
 

@@ -31,7 +31,6 @@ curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
 make install
 curl https://www.npmjs.org/install.sh | sh
 rm -rf ~/node-latest-install
-npm install -g grunt
 npm install -g grunt-cli
 
 printf "\n[Brews & Gems]\n"
