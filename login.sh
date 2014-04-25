@@ -1,6 +1,9 @@
 #!/bin/bash
 
 mkdir ~/git
+mkdir ~/.vim
+mkdir ~/.vim/bundle
+mkdir ~/.vim/bundle/ultisnips
 cd ~/git
 git clone git@github.com:Apercu/myawesome-config.git
 cd ~
@@ -12,6 +15,7 @@ printf "\n[Creating Symlinks & Configs]...\n"
 /bin/ln -s git/my-awesome-config/.tigrc
 cp ~/git/my-awesome-config/Meslo\ LG\ S\ Regular\ for\ Powerline.otf ~/Library/Fonts
 cp ~/git/my-awesome-config/com.googlecode.iterm2.plist ~/Library/Preferences
+cp -r ~/git/my-awesome-config/Ultisnips ~/.vim/bundle/ultisnips
 curl -L http://install.ohmyz.sh | sh
 
 printf "\n[Installing GitFlow]...\n"
@@ -37,4 +41,5 @@ printf "\n[Brews & Gems]\n"
 brew install tig
 brew install wget
 brew install ruby
+gem install sass
 gem install compass
