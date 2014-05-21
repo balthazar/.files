@@ -12,6 +12,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'lukaszb/vim-web-indent'
+Bundle 'pangloss/vim-javascript'
 
 syntax enable
 set background=dark
@@ -52,6 +53,8 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+
+map <F3> ggVGg?
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

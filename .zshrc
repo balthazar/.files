@@ -27,3 +27,5 @@ export PATH=~/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 source $HOME/git/myawesome-config/.gitprompt
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
