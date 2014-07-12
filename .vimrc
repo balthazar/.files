@@ -1,24 +1,26 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'SirVer/ultisnips'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'lukaszb/vim-web-indent'
-Bundle 'pangloss/vim-javascript'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'SirVer/ultisnips'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'lukaszb/vim-web-indent'
+Plugin 'pangloss/vim-javascript'
+
+call vundle#end()
+filetype plugin indent on
 
 syntax enable
 set background=dark
 colorscheme solarized
 
-filetype plugin indent on
 syntax on
 
 set noexpandtab

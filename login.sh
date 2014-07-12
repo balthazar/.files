@@ -8,11 +8,15 @@ cd ~/git
 git clone git@github.com:Apercu/myawesome-config.git
 cd ~
 
+git config --global user.name "Balthazar Gronon"
+git config --global user.email bgronon@gmail.com
+
 printf "\n[Creating Symlinks & Configs]...\n"
 /bin/ln -s git/my-awesome-config/.profile
 /bin/ln -s git/my-awesome-config/.vimrc
 /bin/ln -s git/my-awesome-config/.zshrc
 /bin/ln -s git/my-awesome-config/.tigrc
+/bin/ln -s git/my-awesome-config/.gitprompt
 cp ~/git/my-awesome-config/Meslo\ LG\ S\ Regular\ for\ Powerline.otf ~/Library/Fonts
 cp ~/git/my-awesome-config/com.googlecode.iterm2.plist ~/Library/Preferences
 cp -r ~/git/my-awesome-config/Ultisnips ~/.vim/bundle/ultisnips
@@ -36,8 +40,11 @@ make install
 curl https://www.npmjs.org/install.sh | sh
 rm -rf ~/node-latest-install
 npm install -g grunt-cli
+npm install -g bower
+npm install -g gulp
 
 printf "\n[Brews & Gems]\n"
+brew update
 brew install tig
 brew install wget
 brew install ruby
