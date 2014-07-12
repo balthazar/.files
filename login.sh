@@ -1,5 +1,6 @@
 #!/bin/bash
 
+printf "\n[Basics]...\n"
 mkdir ~/git
 mkdir ~/.vim
 mkdir ~/.vim/bundle
@@ -7,13 +8,20 @@ mkdir ~/.vim/bundle/ultisnips
 cd ~/git
 git clone git@github.com:Apercu/myawesome-config.git
 cd ~
+touch .nossh
 
+printf "\n[Git Globals]...\n"
 git config --global user.name "Balthazar Gronon"
 git config --global user.email bgronon@gmail.com
 git config --global core.editor vim
 git config --global push.default simple
+git config --global color.ui true
 
-printf "\n[Creating Symlinks & Configs]...\n"
+printf "\n[Vim]...\n"
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+printf "\n[Creating Symlinks & Copy]...\n"
+curl -L http://install.ohmyz.sh | sh
 /bin/ln -s git/my-awesome-config/.profile
 /bin/ln -s git/my-awesome-config/.vimrc
 /bin/ln -s git/my-awesome-config/.zshrc
@@ -22,7 +30,6 @@ printf "\n[Creating Symlinks & Configs]...\n"
 cp ~/git/my-awesome-config/Meslo\ LG\ S\ Regular\ for\ Powerline.otf ~/Library/Fonts
 cp ~/git/my-awesome-config/com.googlecode.iterm2.plist ~/Library/Preferences
 cp -r ~/git/my-awesome-config/Ultisnips ~/.vim/bundle/ultisnips
-curl -L http://install.ohmyz.sh | sh
 
 printf "\n[Installing GitFlow]...\n"
 
