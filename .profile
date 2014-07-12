@@ -40,7 +40,6 @@ alias gg='cd ~/git'
 
 # Funcs
 # -----
-function gitcom() { git commit -am "$@" ;}
 function count() { find "$@" -name '*.c' | xargs wc -l ;}
 function emacs() { printf "No !\n" && vim "$@" ;}
 function look() { printf "\n# [LOOKING FOR : $@]\n|\n" && ldapsearch -Q uid="$@" | grep -e "^mobile-phone" | sed 's/mobile-phone:/|/' && printf "| $@@student.42.fr\n" && wget -qO - http://dashboard.42.fr/crawler/pull/$@ | grep -o 'last_host": [^ .]\+' | sed 's/last_host": "/| /g' && printf "|\n# [END] \n\n" ;}

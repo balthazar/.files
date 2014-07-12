@@ -26,4 +26,4 @@ export PATH=~/bin:$PATH
 # ------
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
-source $HOME/git/myawesome-config/.gitprompt
+source $HOME/.gitprompt
