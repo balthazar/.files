@@ -10,6 +10,8 @@ cd ~
 
 git config --global user.name "Balthazar Gronon"
 git config --global user.email bgronon@gmail.com
+git config --global core.editor vim
+git config --global push.default simple
 
 printf "\n[Creating Symlinks & Configs]...\n"
 /bin/ln -s git/my-awesome-config/.profile
