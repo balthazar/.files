@@ -58,4 +58,4 @@ brew install tig
 brew install wget
 brew install ruby
 gem install sass
-gem install compass
+gem install compass --pre
