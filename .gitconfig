@@ -1,0 +1,10 @@
+[user]
+	name = Balthazar Gronon
+	email = bgronon@gmail.com
+[color]
+	ui = true
+[push]
+	default = simple
+[core]
+	editor = vim
+	pager = less -S
