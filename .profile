@@ -15,7 +15,7 @@ export PATH=$HOME/local/bin:$PATH
 
 # Variables
 # ---------
-export PS1=$'%{\e[1;34m%}[%m%{\e[m%} %~%{\e[1;34m%}] %{\e[m%}'
+export PS1=$'%{\e[0;34m%}%T %{\e[0m%}[%?] %{\e[0;34m%}%~ %{\e[0m%}'
 export MAIL='bgronon@student.42.fr'
 export MAIL42='bgronon@student.42.fr'
 export USER42='bgronon'
