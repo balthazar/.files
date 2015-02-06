@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="bgronon"
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="true"
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 # Path
 # ----

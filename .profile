@@ -7,11 +7,9 @@
 # Path
 # ----
 export PATH=$HOME/.brew/bin:$PATH
-export PATH=$HOME/.brew/opt/ruby/bin:$PATH
-export PATH=$HOME/.brew/opt/nginx/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$PATH:/usr/local/bin
 
 # Variables
 # ---------
