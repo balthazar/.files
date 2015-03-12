@@ -13,9 +13,20 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lukaszb/vim-web-indent'
 Plugin 'pangloss/vim-javascript'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin '42Zavattas/ZavattaHeader'
 
 call vundle#end()
 filetype plugin indent on
+
+let mapleader=","
+nnoremap <silent> <Leader>k :CommandT<CR>
+nnoremap <silent> <Leader>m :noh<CR>
+nnoremap <Space> <NOP>
+nmap <silent> <Space>h :wincmd h<CR>
+nmap <silent> <Space>t :wincmd j<CR>
+nmap <silent> <Space>n :wincmd k<CR>
+nmap <silent> <Space>s :wincmd l<CR>
 
 syntax enable
 set background=dark
@@ -23,9 +34,10 @@ colorscheme solarized
 
 syntax on
 
-set noexpandtab
-set shiftwidth=4
-set tabstop=4
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
 set sidescrolloff=15
 set colorcolumn=80
 set noswapfile
@@ -57,6 +69,11 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 map <F3> ggVGg?
+nnoremap <Space> <NOP>
+nmap <silent> <Space><Up> :wincmd k<CR>
+nmap <silent> <Space><Down> :wincmd j<CR>
+nmap <silent> <Space><Left> :wincmd h<CR>
+nmap <silent> <Space><Right> :wincmd l<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
