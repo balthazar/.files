@@ -17,13 +17,16 @@
   URxvt.depth:                32
   URxvt.background:           rgba:0000/2b00/3600/EEEE
 
+  URxvt*keysym.Home: \033[1~
+  URxvt*keysym.End: \033[4~
+
 ! -- Fonts
 ! ========
 
   URxvt.allow_bold:           true
 
-  URxvt*font:                 xft:Monospace:pixelsize=14
-  URxvt*boldFont:             xft:Monospace:pixelsize=14
+  URxvt*font:                 xft:Meslo LG M:pixelsize=16:antialias=true
+  URxvt*boldFont:             xft:Meslo LG M:pixelsize=16:antialias=true
 
 ! -- Scrollbar
 ! ============
