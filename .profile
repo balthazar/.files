@@ -7,6 +7,7 @@ export USER42='bgronon'
 export DEFAULT_USER='bgronon'
 export LANG='en_US.UTF-8'
 export EDITOR='vim'
+export BROWSER='google-chrome-stable'
 
 # Aliases
 # -------
@@ -21,6 +22,8 @@ alias gitf='git flow'
 alias gitp='git push'
 alias gitc='git commit'
 alias gg='cd ~/git'
+
+alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
 
 if [[ `uname` == 'Darwin' ]]; then
   alias dl='cd ~/Downloads'
