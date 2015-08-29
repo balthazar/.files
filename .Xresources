@@ -25,8 +25,8 @@
 
   URxvt.allow_bold:           true
 
-  URxvt*font:                 xft:Meslo LG M:pixelsize=16:antialias=true
-  URxvt*boldFont:             xft:Meslo LG M:pixelsize=16:antialias=true
+  URxvt*font:                 xft:Meslo LG S:pixelsize=16:antialias=true
+  URxvt*boldFont:             xft:Meslo LG S:pixelsize=16:antialias=true
 
 ! -- Scrollbar
 ! ============
