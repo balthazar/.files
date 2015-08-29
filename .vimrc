@@ -25,9 +25,7 @@
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'SirVer/ultisnips'
   Plugin 'Raimondi/delimitMate'
-  Plugin '42Zavattas/ZavattaHeader'
   Plugin '42Zavattas/vim-snippets'
-
   Plugin 'scrooloose/nerdtree'
 
   call vundle#end()
