@@ -7,10 +7,8 @@ plugins=(git zsh-syntax-highlighting)
 # Path
 # ----
 if [[ `uname` == 'Darwin' ]]; then
-  export PATH=$HOME/.brew/bin:$PATH
-  export PATH=$HOME/local/bin:$PATH
-  export PATH=$HOME/bin:$PATH
-  export PATH=$PATH:/usr/local/bin
+  export PATH=/nfs/sgoinfre/goinfre/Perso/bgronon/.brew/bin:$PATH
+  export NVM_DIR=~/.nvm
 fi
 
 # Source
@@ -18,3 +16,4 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 source $HOME/.gitprompt
+source $(brew --prefix nvm)/nvm.sh
