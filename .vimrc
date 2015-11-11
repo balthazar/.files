@@ -26,6 +26,7 @@
   Plugin 'SirVer/ultisnips'
   Plugin 'Raimondi/delimitMate'
   Plugin '42Zavattas/vim-snippets'
+  Plugin 'pangloss/vim-javascript'
   Plugin 'scrooloose/nerdtree'
 
   call vundle#end()
@@ -98,6 +99,8 @@
 
   " Never use Ex useless mode
   nnoremap Q <ESC>
+
+  set backspace=indent,eol,start
 
   " Show blank characters
   " set listchars=tab:>-,extends:>,precedes:<
