@@ -13,6 +13,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 printf "\n[Creating Symlinks & Copy]...\n"
 
 curl -L http://install.ohmyz.sh | sh
+rm .zshrc
 /bin/ln -s git/.files/.profile
 /bin/ln -s git/.files/.vimrc
 /bin/ln -s git/.files/.zshrc
