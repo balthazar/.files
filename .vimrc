@@ -149,6 +149,8 @@
   let g:airline_right_alt_sep = ''
   let g:airline_symbols.linenr = '¶'
 
+  let g:jsx_ext_required = 0
+
 " -- Ultisnips
 " ============
 
