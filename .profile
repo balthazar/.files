@@ -27,6 +27,8 @@ alias scaffold='git config --local user.name TheScaffolder && git config --local
 
 if [[ `uname` == 'Darwin' ]]; then
   alias dl='cd ~/Downloads'
+  export HOMEBREW_CACHE=/tmp/cache
+  export HOMEBREW_TEMP=/tmp/brew
 else
   alias dl='cd ~/downloads'
   alias pbcopy='xsel --clipboard --input'
