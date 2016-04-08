@@ -159,3 +159,8 @@
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<tab>"
   let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" -- CtrlP
+" ========
+
+  let g:ctrlp_show_hidden = 1
