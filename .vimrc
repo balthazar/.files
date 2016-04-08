@@ -27,7 +27,7 @@
   Plugin 'Raimondi/delimitMate'
   Plugin '42Zavattas/vim-snippets'
   Plugin 'pangloss/vim-javascript'
-  Plugin 'scrooloose/nerdtree'
+  Plugin 'ctrlpvim/ctrlp.vim'
 
   call vundle#end()
   filetype plugin indent on
@@ -116,6 +116,8 @@
   set wildignore=*.o,*.obj,*~
   set wildignore+=*sass-cache*
   set wildignore+=*DS_Store*
+  set wildignore+=*node_modules*
+  set wildignore+=*dist*
   set wildmenu
 
 " -- Visual helpers
@@ -154,34 +156,6 @@
 " -- Ultisnips
 " ============
 
-   let g:UltiSnipsExpandTrigger="<tab>"
-   let g:UltiSnipsJumpForwardTrigger="<tab>"
-   let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" -- YouCompleteMe
-" ================
-
-  let g:ycm_key_list_select_completion = ['<Down>']
-  let g:ycm_key_list_previous_completion = ['<Up>']
-
-" -- NerdTREE
-" ===========
-
-  autocmd VimEnter * NERDTree
-  autocmd VimEnter * wincmd p
-
-  let NERDTreeMinimalUI=1
-  let NERDTreeCasadeOpenSingleChildDir=1
-  set modifiable
-
-  autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-  function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-      if bufwinnr(t:NERDTreeBufName) != -1
-        if winnr("$") == 1
-          q
-        endif
-      endif
-    endif
-  endfunction
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
