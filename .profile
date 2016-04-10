@@ -1,7 +1,7 @@
 # Variables
 # ---------
 export PS1=$'%{\e[0;34m%}%T%{\e[0m%} %{\e[0;34m%}[%{\e[0m%}%{\e[0;32m%}%n%{\e[0m%}%{\e[0;30m%}:%{\e[0m%}%{\e[0;36m%}%m%{\e[0m%}%{\e[0;34m%}]%{\e[0m%} %{\e[0;34m%}%~ %{\e[0m%}'
-export MAIL='bgronon@student.42.fr'
+export MAIL='bgronon@gmail.com'
 export MAIL42='bgronon@student.42.fr'
 export USER42='bgronon'
 export DEFAULT_USER='bgronon'
