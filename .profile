@@ -8,6 +8,7 @@ export DEFAULT_USER='bgronon'
 export LANG='en_US.UTF-8'
 export EDITOR='vim'
 export BROWSER='google-chrome-stable'
+export GPG_TTY=$(tty)
 
 # Aliases
 # -------
