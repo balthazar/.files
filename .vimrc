@@ -16,20 +16,18 @@
   set nocompatible
   filetype off
 
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
+  call plug#begin('~/.vim/plugged')
 
-  Plugin 'gmarik/Vundle.vim'
+  Plug 'bling/vim-airline'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'SirVer/ultisnips'
+  Plug 'Raimondi/delimitMate'
+  Plug '42Zavattas/vim-snippets', { 'branch': 'develop' }
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
 
-  Plugin 'bling/vim-airline'
-  Plugin 'altercation/vim-colors-solarized'
-  Plugin 'SirVer/ultisnips'
-  Plugin 'Raimondi/delimitMate'
-  Plugin '42Zavattas/vim-snippets'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'ctrlpvim/ctrlp.vim'
-
-  call vundle#end()
+  call plug#end()
   filetype plugin indent on
 
 " -- Aliases
@@ -164,3 +162,8 @@
 " ========
 
   let g:ctrlp_show_hidden = 1
+
+" -- Vim JSX
+" ==========
+
+  let g:jsx_ext_required = 0
