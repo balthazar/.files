@@ -9,6 +9,7 @@
   nmap <silent> <Space>n :wincmd k<CR>
   nmap <silent> <Space>s :wincmd l<CR>
   map <F3> ggVGg?
+  cmap w!! w !sudo tee > /dev/null %
 
 " -- Plugins
 " ==========
@@ -18,7 +19,7 @@
 
   call plug#begin('~/.vim/plugged')
 
-  Plug 'bling/vim-airline'
+  Plug 'itchyny/lightline.vim'
   Plug 'altercation/vim-colors-solarized'
   Plug 'SirVer/ultisnips'
   Plug 'Raimondi/delimitMate'
@@ -26,6 +27,7 @@
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+  Plug 'easymotion/vim-easymotion'
 
   call plug#end()
   filetype plugin indent on
@@ -69,6 +71,9 @@
   set sidescroll=1
   set scrolloff=8
 
+  " Always show status bar
+  set laststatus=2
+
   " Show the 80 chars column
   set colorcolumn=80
 
@@ -97,6 +102,9 @@
 
   " Never use Ex useless mode
   nnoremap Q <ESC>
+
+  " smart paste
+  nnoremap p p=`]`
 
   set backspace=indent,eol,start
 
@@ -133,23 +141,20 @@
   autocmd BufWinLeave * call clearmatches()
   autocmd FileType html,css setlocal shiftwidth=2 tabstop=2
 
-" -- Vim Airline
+" -- Lightline
 " ==============
 
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-
-  let g:airline_powerline_fonts=1
-  let g:Powerline_symbols = 'fancy'
-  let g:airline_powerline_fonts = 1
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.linenr = '¶'
-
-  let g:jsx_ext_required = 0
+  let g:lightline = {
+  \   'colorscheme': 'solarized_dark',
+  \   'active': {
+  \     'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
+  \     'right': [ [ 'lineinfo' ] ]
+  \    },
+  \   'inactive': {
+  \     'left': [ ['relativepath' ] ],
+  \     'right': []
+  \    },
+  \ }
 
 " -- Ultisnips
 " ============
