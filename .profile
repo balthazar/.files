@@ -13,7 +13,7 @@ export GOPATH='~/go'
 
 # Aliases
 # -------
-alias prof='vim ~/.profile'
+alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 
