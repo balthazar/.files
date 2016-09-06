@@ -25,6 +25,8 @@ alias gitp='git push'
 alias gitc='git commit'
 alias gg='cd ~/git'
 
+alias lint='npm run lint 2> /dev/null'
+
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
 
 if [[ `uname` == 'Darwin' ]]; then
