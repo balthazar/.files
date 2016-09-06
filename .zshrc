@@ -15,3 +15,5 @@ fi
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 source $HOME/.gitprompt
+
+eval $(thefuck --alias)
