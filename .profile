@@ -23,6 +23,7 @@ alias gits='git status'
 alias gitf='git flow'
 alias gitp='git push'
 alias gitc='git commit'
+alias gita='git add'
 alias gg='cd ~/git'
 
 alias lint='npm run lint 2> /dev/null'

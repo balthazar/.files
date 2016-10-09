@@ -1,6 +1,7 @@
 [user]
 	name = Balthazar Gronon
 	email = bgronon@gmail.com
+	signingkey = 3D8E9C95
 [color]
 	ui = true
 [push]
