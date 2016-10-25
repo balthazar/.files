@@ -1,30 +1,31 @@
 # Variables
 # ---------
 export PS1=$'%{\e[0;34m%}%T%{\e[0m%} %{\e[0;34m%}[%{\e[0m%}%{\e[0;32m%}%n%{\e[0m%}%{\e[0;30m%}:%{\e[0m%}%{\e[0;36m%}%m%{\e[0m%}%{\e[0;34m%}]%{\e[0m%} %{\e[0;34m%}%~ %{\e[0m%}'
-export MAIL='bgronon@gmail.com'
-export MAIL42='bgronon@student.42.fr'
-export USER42='bgronon'
+export MAIL='bgronon@uber.com'
 export DEFAULT_USER='bgronon'
 export LANG='en_US.UTF-8'
 export EDITOR='vim'
 export BROWSER='google-chrome-stable'
 export GPG_TTY=$(tty)
-export GOPATH='~/go'
+
+export VAGRANT=''
 
 # Aliases
 # -------
 alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
+alias uaws="aws-credential-client -x -u balthazar@uber.com -t push -r engineering"
 
 alias l='ls -la'
 
 alias gits='git status'
-alias gitf='git flow'
-alias gitp='git push'
 alias gitc='git commit'
 alias gita='git add'
+alias gitk='git checkout'
+alias gitp='git push'
 alias gg='cd ~/git'
+alias u='cd ~/Uber'
 
 alias lint='npm run lint 2> /dev/null'
 
