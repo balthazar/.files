@@ -11,6 +11,16 @@
   map <F3> ggVGg?
   cmap w!! w !sudo tee > /dev/null %
 
+  " Never use Ex useless mode
+  nnoremap Q <ESC>
+
+  " search for visually selected text by pressing //
+  vnoremap // y/<C-R>"<CR>"
+
+  " smart paste
+  nnoremap m p=`]
+  nnoremap <S-m> <S-p>=`]
+
 " -- Plugins
 " ==========
 
@@ -28,6 +38,8 @@
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
   Plug 'easymotion/vim-easymotion'
+  Plug 'leafgarland/typescript-vim'
+  "Plug '~/git/vim-stats'
 
   call plug#end()
   filetype plugin indent on
@@ -100,12 +112,10 @@
   " Show infos in status bar
   set ruler
 
-  " Never use Ex useless mode
-  nnoremap Q <ESC>
+  " Prevent annoying highlight on search
+  set nohlsearch
 
-  " smart paste
-  nnoremap p p=`]`
-
+  " Correct bug
   set backspace=indent,eol,start
 
   " Show blank characters
