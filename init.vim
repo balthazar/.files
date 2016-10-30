@@ -250,3 +250,10 @@ let g:neomake_javascript_enabled_makers = ['eslint']
   let g:NERDDefaultAlign = 'left'
 
 " }
+
+" -- CtrlP {
+" ================
+
+  let g:ctrlp_show_hidden = 1
+
+" }
