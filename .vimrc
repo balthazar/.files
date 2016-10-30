@@ -39,7 +39,6 @@
   Plug 'mxw/vim-jsx'
   Plug 'easymotion/vim-easymotion'
   Plug 'leafgarland/typescript-vim'
-  "Plug '~/git/vim-stats'
 
   call plug#end()
   filetype plugin indent on
