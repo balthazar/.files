@@ -15,7 +15,7 @@ export VAGRANT=''
 alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
-alias uaws="aws-credential-client -x -u balthazar@uber.com -t push -r engineering"
+alias uaws='aws-credential-client -x -u balthazar@uber.com -t push -r engineering'
 
 alias l='ls -la'
 
