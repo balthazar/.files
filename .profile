@@ -8,7 +8,7 @@ export EDITOR='vim'
 export BROWSER='google-chrome-stable'
 export GPG_TTY=$(tty)
 
-export VAGRANT=''
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
 # Aliases
 # -------
@@ -16,6 +16,7 @@ alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias uaws='aws-credential-client -x -u balthazar@uber.com -t push -r engineering'
+alias vim='nvim'
 
 alias l='ls -la'
 
