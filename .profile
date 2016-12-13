@@ -11,11 +11,12 @@ export GPG_TTY=$(tty)
 
 # Aliases
 # -------
+alias vim='nvim'
 alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
+alias bnpm='npm --userconfig=$HOME/.bnpmrc'
 alias uaws='aws-credential-client -x -u balthazar@uber.com -t push -r engineering'
-alias vim='nvim'
 
 alias l='ls -la'
 
@@ -41,7 +42,6 @@ fi
 
 # Functions
 # ---------
-function count() { find "$@" -name '*.c' | xargs wc -l ;}
 function emacs() { printf "No !\n" && vim "$@" ;}
 
 if [[ `uname` == 'Linux' ]]; then
