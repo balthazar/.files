@@ -8,7 +8,6 @@ export EDITOR='vim'
 export BROWSER='google-chrome-stable'
 export GPG_TTY=$(tty)
 
-export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
 # Aliases
 # -------
