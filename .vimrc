@@ -18,7 +18,7 @@
   vnoremap // y/<C-R>"<CR>"
 
   " smart paste
-  nnoremap m p=`]
+  nnoremap p p=`]
   nnoremap <S-m> <S-p>=`]
 
 " -- Plugins
@@ -31,13 +31,15 @@
 
   Plug 'itchyny/lightline.vim'
   Plug 'altercation/vim-colors-solarized'
+
   Plug 'SirVer/ultisnips'
   Plug 'Raimondi/delimitMate'
   Plug '42Zavattas/vim-snippets', { 'branch': 'develop' }
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx'
   Plug 'easymotion/vim-easymotion'
+
+  Plug 'mxw/vim-jsx'
+  Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
 
   call plug#end()

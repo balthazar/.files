@@ -51,16 +51,19 @@
 
   Plug 'itchyny/lightline.vim'
   Plug 'altercation/vim-colors-solarized'
-  Plug 'pangloss/vim-javascript'
+
   Plug 'Raimondi/delimitMate'
   Plug 'SirVer/ultisnips'
   Plug '42Zavattas/vim-snippets', { 'branch': 'develop' }
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'airblade/vim-gitgutter'
   Plug 'easymotion/vim-easymotion'
-  Plug 'mxw/vim-jsx'
   Plug 'scrooloose/nerdcommenter'
   Plug 'neomake/neomake'
+
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'mxw/vim-jsx'
 
   call plug#end()
   filetype plugin indent on
@@ -175,7 +178,8 @@
   set wildignore+=*plugins*
   set wildignore+=*platforms*
   set wildignore+=*release*
-  set wildignore+=*dist*,*dist-server*,*lib*
+  set wildignore+=*coverage*
+  set wildignore+=*dist*,*dist-server*
   set wildmenu
 
 " }
