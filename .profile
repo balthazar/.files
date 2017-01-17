@@ -5,9 +5,11 @@ export MAIL='bgronon@uber.com'
 export DEFAULT_USER='bgronon'
 export LANG='en_US.UTF-8'
 export EDITOR='vim'
-export BROWSER='google-chrome-stable'
 export GPG_TTY=$(tty)
 
+if [[ `uname` == 'Linux' ]]; then
+  export BROWSER='google-chrome-stable'
+fi
 
 # Aliases
 # -------
@@ -17,18 +19,23 @@ alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias bnpm='npm --userconfig=$HOME/.bnpmrc'
 alias uaws='aws-credential-client -x -u balthazar@uber.com -t push -r engineering'
+alias adiff='arc diff --allow-untracked'
+alias gre='grep -rni'
 
 alias l='ls -la'
 
 alias gits='git status'
-alias gitc='git commit'
+alias gitc='git commit -S'
 alias gita='git add'
 alias gitk='git checkout'
 alias gitp='git push'
+alias gitt='git tag -s'
 alias gg='cd ~/git'
 alias u='cd ~/Uber'
 
 alias lint='npm run lint 2> /dev/null'
+alias watch='npm run watch'
+alias b='npm run build'
 
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
 
@@ -43,8 +50,9 @@ fi
 # Functions
 # ---------
 function emacs() { printf "No !\n" && vim "$@" ;}
+function y() { yarn $@ --ignore-engines ;}
 
 if [[ `uname` == 'Linux' ]]; then
-  function light() { sudo ~/.bin/light_.sh $@ ; }
+  function light() { sudo ~/.bin/light_.sh $@ ;}
   function off() { sudo shutdown 0 ;}
 fi
