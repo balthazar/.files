@@ -7,13 +7,14 @@ export LANG='en_US.UTF-8'
 export EDITOR='nvim'
 export GPG_TTY=$(tty)
 
-if [[ `uname` == 'Linux' ]]; then
+if [[ $(uname) == 'Linux' ]]; then
   export BROWSER='google-chrome-stable'
 fi
 
 # Aliases
 # -------
-alias vim='nvim'
+alias v='nvim'
+alias vim='echo "No" && echo $@ > /dev/null'
 alias prof='vim ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
@@ -44,15 +45,14 @@ if [[ `uname` == 'Darwin' ]]; then
 else
   alias dl='cd ~/downloads'
   alias pbcopy='xsel --clipboard --input'
-  alias upgrade='sudo pacman -Syu'
+  alias u='sudo pacman -Syyu'
 fi
 
 # Functions
 # ---------
-function emacs() { printf "No !\n" && vim "$@" ;}
 function y() { yarn $@ --ignore-engines ;}
 
-if [[ `uname` == 'Linux' ]]; then
+if [[ $(uname) == 'Linux' ]]; then
   function light() { sudo ~/.bin/light_.sh $@ ;}
   function off() { sudo shutdown 0 ;}
 fi
