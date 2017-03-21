@@ -4,7 +4,7 @@ export PS1=$'%{\e[0;34m%}%T%{\e[0m%} %{\e[0;34m%}[%{\e[0m%}%{\e[0;32m%}%n%{\e[0m
 export MAIL='bgronon@uber.com'
 export DEFAULT_USER='bgronon'
 export LANG='en_US.UTF-8'
-export EDITOR='vim'
+export EDITOR='nvim'
 export GPG_TTY=$(tty)
 
 if [[ `uname` == 'Linux' ]]; then
