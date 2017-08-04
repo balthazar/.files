@@ -15,15 +15,14 @@ fi
 # -------
 alias v='nvim'
 alias vim='echo "No" && echo $@ > /dev/null'
-alias prof='vim ~/.profile && sprof'
+alias prof='v ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias bnpm='npm --userconfig=$HOME/.bnpmrc'
-alias uaws='aws-credential-client -x -u balthazar@uber.com -t push -r engineering'
 alias adiff='arc diff --allow-untracked'
 alias gre='grep -rni'
 
-alias l='ls -la'
+alias l='ls -lah'
 
 alias gits='git status'
 alias gitc='git commit -S'
