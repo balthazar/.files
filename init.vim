@@ -60,6 +60,7 @@
   Plug 'easymotion/vim-easymotion'
   Plug 'scrooloose/nerdcommenter'
   Plug 'neomake/neomake'
+  Plug 'sbdchd/neoformat'
 
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
@@ -252,6 +253,23 @@ let g:neomake_javascript_enabled_makers = ['eslint']
   let g:NERDSpaceDelims = 1
   let g:NERDTrimTrailingWhitespace = 1
   let g:NERDDefaultAlign = 'left'
+
+" }
+
+" -- NeoFormat {
+" ================
+
+  let g:neoformat_javascript_prettier = {
+        \   'exe': 'prettier',
+        \   'args': [
+        \     '--print-width 100',
+        \     '--single-quote',
+        \     '--trailing-comma all',
+        \     '--no-semi'
+        \   ],
+        \ }
+  let g:neoformat_enabled_javascript = ['prettier']
+  autocmd! BufWritePre * Neoformat
 
 " }
 
