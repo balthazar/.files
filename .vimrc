@@ -1,6 +1,6 @@
 " ============================================================================ "
 "                                                                              "
-" ---------                       (n)vim                               ------- "
+" ---------                         vim                                ------- "
 "                                                                              "
 " ============================================================================ "
 
@@ -62,9 +62,11 @@
   Plug 'neomake/neomake'
   Plug 'sbdchd/neoformat'
 
+  Plug 'prettier/vim-prettier'
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
   Plug 'mxw/vim-jsx'
+  Plug 'tomlion/vim-solidity'
 
   call plug#end()
   filetype plugin indent on
@@ -256,20 +258,29 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 " }
 
-" -- NeoFormat {
+" -- Prettier {
 " ================
 
-  let g:neoformat_javascript_prettier = {
-        \   'exe': 'prettier',
-        \   'args': [
-        \     '--print-width 100',
-        \     '--single-quote',
-        \     '--trailing-comma all',
-        \     '--no-semi'
-        \   ],
-        \ }
-  let g:neoformat_enabled_javascript = ['prettier']
-  autocmd! BufWritePre * Neoformat
+  let g:prettier#config#print_width = 100
+
+  let g:prettier#config#tab_width = 2
+
+  let g:prettier#config#use_tabs = 'false'
+
+  let g:prettier#config#semi = 'false'
+
+  let g:prettier#config#single_quote = 'true'
+
+  let g:prettier#config#bracket_spacing = 'trie'
+
+  let g:prettier#config#jsx_bracket_same_line = 'true'
+
+  let g:prettier#config#trailing_comma = 'all'
+
+  let g:prettier#config#parser = 'babylon'
+
+  let g:prettier#autoformat = 0
+  autocmd BufWritePre,InsertLeave,TextChanged *.js,,*.ts,*.tsx,*.css,*.scss,*.json PrettierAsync
 
 " }
 

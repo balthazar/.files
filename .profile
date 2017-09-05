@@ -13,8 +13,7 @@ fi
 
 # Aliases
 # -------
-alias v='nvim'
-alias vim='echo "No" && echo $@ > /dev/null'
+alias v='vim'
 alias prof='v ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
