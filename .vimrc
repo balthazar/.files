@@ -213,7 +213,7 @@ let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#parser = 'babylon'
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre,InsertLeave,TextChanged *.js,,*.ts,*.tsx,*.css,*.scss,*.json PrettierAsync
+autocmd BufWritePre,InsertLeave,TextChanged *.js,*.ts,*.tsx,*.css,*.scss,*.json PrettierAsync
 
 " CtrlP
 let g:ctrlp_show_hidden = 1

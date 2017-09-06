@@ -7,7 +7,7 @@
 [push]
   default = simple
 [core]
-  editor = nvim
+  editor = vim
   pager = less -S
 [branch]
   autosetuprebase = always
