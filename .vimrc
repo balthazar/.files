@@ -43,19 +43,18 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
 
-Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug '42Zavattas/vim-snippets', { 'branch': 'develop' }
+Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
@@ -68,11 +67,10 @@ filetype plugin indent on
 command Sp set paste
 command Np set nopaste
 
-" Need explanation ?
+" Need explanation?
 syntax on
 
-" The chosen one
-colorscheme solarized
+colorscheme gruvbox
 set background=dark
 
 set mouse=c
@@ -175,18 +173,8 @@ autocmd VimResized * :wincmd =
 
 highlight link xmlEndTag xmlTag
 
-" Lightline
-let g:lightline = {
-\   'colorscheme': 'solarized',
-\   'active': {
-\     'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
-\     'right': [ [ 'lineinfo' ] ]
-\    },
-\   'inactive': {
-\     'left': [ ['relativepath' ] ],
-\     'right': []
-\    },
-\ }
+" Line
+let g:airline_powerline_fonts = 1
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -201,20 +189,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDDefaultAlign = 'left'
 
-" Prettier
-let g:prettier#config#print_width = 100
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'false'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'trie'
-let g:prettier#config#jsx_bracket_same_line = 'true'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#parser = 'babylon'
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre,InsertLeave,TextChanged *.js,*.ts,*.tsx,*.css,*.scss,*.json PrettierAsync
-
 " CtrlP
 let g:ctrlp_show_hidden = 1
 
@@ -222,3 +196,9 @@ let g:ctrlp_show_hidden = 1
 let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = 'ℹ'
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma'
