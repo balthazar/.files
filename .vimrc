@@ -70,8 +70,12 @@ command Np set nopaste
 " Need explanation?
 syntax on
 
+" Colors
 colorscheme gruvbox
 set background=dark
+
+" Transparent bg <3
+hi Normal ctermbg=NONE
 
 set mouse=c
 
@@ -142,9 +146,6 @@ nnoremap Q <ESC>
 set listchars=tab:>-,trail:·,nbsp:%
 set list
 
-" Transparent bg <3
-hi Normal ctermbg=NONE
-
 " Opening tab completion
 set wildmode=longest,full
 set wildignore=*.o,*.obj,*~
@@ -153,7 +154,6 @@ set wildignore+=*DS_Store*
 set wildignore+=*node_modules*
 set wildignore+=*ios/*
 set wildignore+=*android/*
-set wildignore+=*bower_components*
 set wildignore+=*plugins*
 set wildignore+=*platforms*
 set wildignore+=*release*
