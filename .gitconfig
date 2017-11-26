@@ -19,3 +19,10 @@
   insteadOf = https://github.com/uber/
 [url "ssh://gitolite@code.uber.internal:2222/"]
   insteadOf = https://code.uber.internal/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
