@@ -19,7 +19,6 @@ alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias bnpm='npm --userconfig=$HOME/.bnpmrc'
 alias unpm='npm --userconfig=$HOME/.unpmrc'
-alias adiff='arc diff --allow-untracked'
 alias gre='grep -rni'
 
 alias l='ls -lah'
@@ -35,9 +34,11 @@ alias u='cd ~/Uber'
 
 alias lint='npm run lint 2> /dev/null'
 alias watch='npm run watch'
-alias b='npm run build'
+alias b='yarn build'
+alias t='yarn test'
 
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
+alias linus='git config --local user.name "Linus Torvalds" && git config --local user.email torvalds@linux-foundation.org && git commit --amend --author "Linus Torvalds <torvalds@linux-foundation.org>" && git config --local --unset user.email && git config --local --unset user.name'
 
 if [[ `uname` == 'Darwin' ]]; then
   alias dl='cd ~/Downloads'
@@ -55,3 +56,8 @@ if [[ $(uname) == 'Linux' ]]; then
   function light() { sudo ~/.bin/light_.sh $@ ;}
   function off() { sudo shutdown 0 ;}
 fi
+
+function gifify() {
+  ffmpeg -i "$1" -vf scale=800:-1 -r 10 -f image2pipe -vcodec ppm - |\
+  convert -delay 5 -layers Optimize -loop 0 - "$2"
+}
