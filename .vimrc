@@ -59,6 +59,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'tomlion/vim-solidity'
+Plug 'flowtype/vim-flow'
 
 call plug#end()
 filetype plugin indent on
@@ -152,8 +153,8 @@ set wildignore=*.o,*.obj,*~
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
 set wildignore+=*node_modules*
-set wildignore+=*ios/*
-set wildignore+=*android/*
+set wildignore+=*ios*
+set wildignore+=*android*
 set wildignore+=*plugins*
 set wildignore+=*platforms*
 set wildignore+=*release*
@@ -176,6 +177,9 @@ highlight link xmlEndTag xmlTag
 " Line
 let g:airline_powerline_fonts = 1
 
+" Flow
+let g:flow#enable = 0
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -193,7 +197,7 @@ let g:NERDDefaultAlign = 'left'
 let g:ctrlp_show_hidden = 1
 
 " ale
-let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint', 'flow'] }
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = 'ℹ'
 
