@@ -13,12 +13,6 @@
   autosetuprebase = always
 [rerere]
   enabled = true
-[url "ssh://gitolite@code.uber.internal/"]
-  insteadOf = git://code.uber.internal/
-[url "ssh://git@github.com/uber/"]
-  insteadOf = https://github.com/uber/
-[url "ssh://gitolite@code.uber.internal:2222/"]
-  insteadOf = https://code.uber.internal/
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
