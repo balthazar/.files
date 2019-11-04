@@ -9,14 +9,15 @@
 [core]
   editor = vim
   pager = less -S
+  excludesfile = ~/.gitignore_global
 [branch]
   autosetuprebase = always
 [rerere]
   enabled = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [commit]
-	gpgsign = true
+  gpgsign = true
