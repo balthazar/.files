@@ -33,7 +33,7 @@ alias gitt='git tag -s'
 alias gg='cd ~/git'
 alias u='cd ~/Uber'
 
-alias lint='npm run lint 2> /dev/null'
+alias lint='eslint src'
 alias watch='npm run watch'
 alias b='yarn build'
 alias t='yarn test'
@@ -53,12 +53,22 @@ fi
 # ---------
 function y() { yarn $@ --ignore-engines ;}
 
+function whitescale() { convert images/$@.png -channel RGB -fuzz 99% -fill white -opaque black images/$@-white.png ;}
+
 if [[ $(uname) == 'Linux' ]]; then
   function light() { sudo ~/.bin/light_.sh $@ ;}
   function off() { sudo shutdown 0 ;}
 fi
 
-function gifify() {
-  ffmpeg -i "$1" -vf scale=800:-1 -r 10 -f image2pipe -vcodec ppm - |\
-  convert -delay 5 -layers Optimize -loop 0 - "$2"
+function dcheck() {
+  for d in $@
+  do
+    echo -n "$d - "
+    res=`whois $d`
+    echo "$res" | grep 'Expiry Date' || echo "available"
+    echo ""
+  done
 }
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

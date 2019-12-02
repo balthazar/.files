@@ -66,6 +66,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 Plug 'tomlion/vim-solidity'
 Plug 'flowtype/vim-flow'
+Plug 'jparise/vim-graphql'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 filetype plugin indent on
