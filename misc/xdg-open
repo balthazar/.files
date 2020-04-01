@@ -999,7 +999,7 @@ DEBUG 2 "Selected DE $DE"
 
 if [[ $url = mpv://* ]]
 then
-  mpv "${url:6}"
+  mpv "${url:6}" --input-ipc-server=/tmp/mpvsocket
   exit_success
 fi
 
