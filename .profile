@@ -7,6 +7,7 @@ export LANG='en_US.UTF-8'
 export EDITOR='vim'
 export BOX='198.27.65.108'
 export GPG_TTY=$(tty)
+export TERM=xterm
 
 if [[ $(uname) == 'Linux' ]]; then
   export BROWSER='google-chrome-stable'
@@ -19,8 +20,9 @@ alias prof='v ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias bnpm='npm --userconfig=$HOME/.bnpmrc'
-alias unpm='npm --userconfig=$HOME/.unpmrc'
 alias gre='grep -rni'
+alias dado='ssh me@balthazar.dev'
+alias bigdaddy='ssh root@ns5001069.ip-167-114-64.net'
 
 alias l='ls -lah'
 
@@ -29,12 +31,14 @@ alias gitc='git commit'
 alias gita='git add'
 alias gitk='git checkout'
 alias gitp='git push'
+alias pull='git pull'
 alias gitt='git tag -s'
 alias gg='cd ~/git'
-alias u='cd ~/Uber'
+alias a='cd ~/git/ashlar'
 
 alias lint='eslint src'
 alias watch='npm run watch'
+alias s='yarn start'
 alias b='yarn build'
 alias t='yarn test'
 
@@ -70,5 +74,5 @@ function dcheck() {
   done
 }
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
