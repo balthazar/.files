@@ -1,7 +1,7 @@
 [user]
   name = Balthazar Gronon
-  email = bgronon@gmail.com
-  signingkey = 3D8E9C95
+  email = git@balthazar.dev
+  signingkey = 60CFC855069EBE4E
 [color]
   ui = true
 [push]
