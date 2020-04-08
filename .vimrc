@@ -53,7 +53,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 
 Plug 'SirVer/ultisnips'
-Plug '42Zavattas/vim-snippets', { 'branch': 'develop' }
+Plug '42Zavattas/vim-snippets'
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'

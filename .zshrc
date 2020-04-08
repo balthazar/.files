@@ -21,6 +21,7 @@ export PATH=./node_modules/.bin:$PATH
 # ------
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
+source $HOME/git/.files/.gitprompt
 
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
