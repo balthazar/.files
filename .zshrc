@@ -39,3 +39,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export FZF_DEFAULT_COMMAND='fd -I -H -E node_modules -E .git -t f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

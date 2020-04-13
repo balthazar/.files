@@ -19,12 +19,13 @@ alias v='vim'
 alias prof='v ~/.profile && sprof'
 alias sprof='source ~/.profile'
 alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
-alias bnpm='npm --userconfig=$HOME/.bnpmrc'
+alias anpm='npm --userconfig=$HOME/.anpmrc'
 alias gre='grep -rni'
 alias dado='ssh me@balthazar.dev'
 alias bigdaddy='ssh root@ns5001069.ip-167-114-64.net'
 
 alias l='ls -lah'
+alias mpv='mpv --input-ipc-server=/tmp/mpvsocket'
 
 alias gits='git status'
 alias gitc='git commit'
@@ -35,6 +36,7 @@ alias pull='git pull'
 alias gitt='git tag -s'
 alias gg='cd ~/git'
 alias a='cd ~/git/ashlar'
+alias dl='cd ~/Downloads'
 
 alias lint='eslint src'
 alias watch='npm run watch'
@@ -43,12 +45,8 @@ alias b='yarn build'
 alias t='yarn test'
 
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
-alias linus='git config --local user.name "Linus Torvalds" && git config --local user.email torvalds@linux-foundation.org && git commit --amend --author "Linus Torvalds <torvalds@linux-foundation.org>" && git config --local --unset user.email && git config --local --unset user.name'
 
-if [[ `uname` == 'Darwin' ]]; then
-  alias dl='cd ~/Downloads'
-else
-  alias dl='cd ~/downloads'
+if [[ `uname` != 'Darwin' ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias u='sudo pacman -Syyu'
 fi
