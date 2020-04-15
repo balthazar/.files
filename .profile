@@ -1,11 +1,9 @@
 # Variables
 # ---------
 export PS1=$'%{\e[0;34m%}%T%{\e[0m%} %{\e[0;34m%}[%{\e[0m%}%{\e[0;32m%}%n%{\e[0m%}%{\e[0;30m%}:%{\e[0m%}%{\e[0;36m%}%m%{\e[0m%}%{\e[0;34m%}]%{\e[0m%} %{\e[0;34m%}%~ %{\e[0m%}'
-export MAIL='bgronon@uber.com'
-export DEFAULT_USER='bgronon'
+export MAIL='me@balthazar.dev'
 export LANG='en_US.UTF-8'
 export EDITOR='vim'
-export BOX='198.27.65.108'
 export GPG_TTY=$(tty)
 export TERM=xterm
 
