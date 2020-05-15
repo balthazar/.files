@@ -10,7 +10,7 @@
 separator=true
 separator_block_width=15
 
-SCRIPT_DIR=/etc/i3blocks
+SCRIPT_DIR=/home/me/git/.files/i3blocks/bin
 
 [xkb_layout]
 command=$SCRIPT_DIR/xkb_layout
@@ -20,7 +20,7 @@ interval=persist
 markup=pango
 
 [aur_updates]
-command=(yay -Qua || true) | wc -l
+command=$SCRIPT_DIR/yay
 label=YAY 
 color=#c684f6
 interval=30
