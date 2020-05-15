@@ -14,7 +14,14 @@ exec telegram-desktop
 assign [class="Slack"] "3 coms"
 assign [class="Telegram"] "3 coms"
 
+exec chatty
+exec twitch-gui
+assign [class="chatty"] "5"
+assign [class="twitch-gui"] "5"
+
 exec --no-startup-id setxkbmap dvp,us -option 'grp:alt_shift_toggle'
+
+
 
 bindsym $mod+Return exec kitty
 bindsym $mod+c exec chromium
@@ -271,3 +278,76 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
+## DVP
+# change focus
+bindsym Group1+$mod+h focus left
+bindsym Group1+$mod+t focus down
+bindsym Group1+$mod+n focus up
+bindsym Group1+$mod+s focus right
+
+# move focused window
+bindsym Group1+$mod+Shift+h move left
+bindsym Group1+$mod+Shift+t move down
+bindsym Group1+$mod+Shift+n move up
+bindsym Group1+$mod+Shift+s move right
+
+# switch to workspace
+bindsym Group1+$mod+ampersand workspace $ws1
+bindsym Group1+$mod+bracketleft workspace $ws2
+bindsym Group1+$mod+braceleft workspace $ws3
+bindsym Group1+$mod+braceright workspace $ws4
+bindsym Group1+$mod+parenleft workspace $ws5
+bindsym Group1+$mod+equal workspace $ws6
+bindsym Group1+$mod+asterisk workspace $ws7
+bindsym Group1+$mod+parenright workspace $ws8
+bindsym Group1+$mod+plus workspace $ws9
+bindsym Group1+$mod+bracketright workspace $ws10
+
+# move focused container to workspace
+bindsym Group1+$mod+Shift+ampersand      move container to workspace $ws1
+bindsym Group1+$mod+Shift+bracketleft    move container to workspace $ws2
+bindsym Group1+$mod+Shift+braceleft      move container to workspace $ws3
+bindsym Group1+$mod+Shift+braceright     move container to workspace $ws4
+bindsym Group1+$mod+Shift+1              move container to workspace $ws5
+bindsym Group1+$mod+Shift+equal          move container to workspace $ws6
+bindsym Group1+$mod+Shift+asterisk       move container to workspace $ws7
+bindsym Group1+$mod+Shift+2              move container to workspace $ws8
+bindsym Group1+$mod+Shift+plus           move container to workspace $ws9
+bindsym Group1+$mod+Shift+bracketright   move container to workspace $ws10
+
+## US
+# change focus
+bindsym Group2+$mod+h focus left
+bindsym Group2+$mod+j focus down
+bindsym Group2+$mod+k focus up
+bindsym Group2+$mod+l focus right
+
+# move focused window
+bindsym Group2+$mod+Shift+h move left
+bindsym Group2+$mod+Shift+j move down
+bindsym Group2+$mod+Shift+k move up
+bindsym Group2+$mod+Shift+l move right
+
+# switch to workspace
+bindsym Group2+$mod+1 workspace $ws1
+bindsym Group2+$mod+2 workspace $ws2
+bindsym Group2+$mod+3 workspace $ws3
+bindsym Group2+$mod+4 workspace $ws4
+bindsym Group2+$mod+5 workspace $ws5
+bindsym Group2+$mod+6 workspace $ws6
+bindsym Group2+$mod+7 workspace $ws7
+bindsym Group2+$mod+8 workspace $ws8
+bindsym Group2+$mod+9 workspace $ws9
+bindsym Group2+$mod+0 workspace $ws10
+
+# # move focused container to workspace
+bindsym Group2+$mod+Shift+1 move container to workspace $ws1
+bindsym Group2+$mod+Shift+2 move container to workspace $ws2
+bindsym Group2+$mod+Shift+3 move container to workspace $ws3
+bindsym Group2+$mod+Shift+4 move container to workspace $ws4
+bindsym Group2+$mod+Shift+5 move container to workspace $ws5
+bindsym Group2+$mod+Shift+6 move container to workspace $ws6
+bindsym Group2+$mod+Shift+7 move container to workspace $ws7
+bindsym Group2+$mod+Shift+8 move container to workspace $ws8
+bindsym Group2+$mod+Shift+9 move container to workspace $ws9
+bindsym Group2+$mod+Shift+0 move container to workspace $ws10

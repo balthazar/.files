@@ -11,5 +11,4 @@ eval "$(ssh-agent)"
 
 feh --bg-scale ~/Downloads/wallpaper.jpg
 
-sh ~/git/.files/i3/load
 exec i3

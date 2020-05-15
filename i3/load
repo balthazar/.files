@@ -1,8 +1,0 @@
-#!/bin/bash
-
-FOLDER=$HOME/git/.files/i3
-LAYOUT=$(/usr/bin/xkb-switch -p)
-OUTPUT=$FOLDER/config
-
-cat $FOLDER/base > $OUTPUT
-cat $FOLDER/$LAYOUT >> $OUTPUT
