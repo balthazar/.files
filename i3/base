@@ -75,7 +75,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # reload the configuration file
-bindsym $mod+Control+r exec "~/git/.files/i3/load && reload"
+bindsym $mod+Control+r exec "sh ~/git/.files/i3/load && i3 reload"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+Control+r restart
 # exit i3 (logs you out of your X session)
@@ -270,3 +270,4 @@ mode "$mode_gaps_left" {
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
+

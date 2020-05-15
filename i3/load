@@ -6,5 +6,3 @@ OUTPUT=$FOLDER/config
 
 cat $FOLDER/base > $OUTPUT
 cat $FOLDER/$LAYOUT >> $OUTPUT
-
-exec i3
