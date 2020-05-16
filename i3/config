@@ -21,8 +21,6 @@ assign [class="twitch-gui"] "5"
 
 exec --no-startup-id setxkbmap dvp,us -option 'grp:alt_shift_toggle'
 
-
-
 bindsym $mod+Return exec kitty
 bindsym $mod+c exec chromium
 # bindsym $mod+e exec ~/bin/pick-emoji
@@ -292,28 +290,28 @@ bindsym Group1+$mod+Shift+n move up
 bindsym Group1+$mod+Shift+s move right
 
 # switch to workspace
-bindsym Group1+$mod+ampersand workspace $ws1
-bindsym Group1+$mod+bracketleft workspace $ws2
-bindsym Group1+$mod+braceleft workspace $ws3
-bindsym Group1+$mod+braceright workspace $ws4
-bindsym Group1+$mod+parenleft workspace $ws5
-bindsym Group1+$mod+equal workspace $ws6
-bindsym Group1+$mod+asterisk workspace $ws7
-bindsym Group1+$mod+parenright workspace $ws8
-bindsym Group1+$mod+plus workspace $ws9
-bindsym Group1+$mod+bracketright workspace $ws10
+bindsym Group1+$mod+dollar workspace $ws1
+bindsym Group1+$mod+ampersand workspace $ws2
+bindsym Group1+$mod+bracketleft workspace $ws3
+bindsym Group1+$mod+braceleft workspace $ws4
+bindsym Group1+$mod+braceright workspace $ws5
+bindsym Group1+$mod+parenleft workspace $ws6
+bindsym Group1+$mod+equal workspace $ws7
+bindsym Group1+$mod+asterisk workspace $ws8
+bindsym Group1+$mod+parenright workspace $ws9
+bindsym Group1+$mod+plus workspace $ws10
 
 # move focused container to workspace
-bindsym Group1+$mod+Shift+ampersand      move container to workspace $ws1
-bindsym Group1+$mod+Shift+bracketleft    move container to workspace $ws2
-bindsym Group1+$mod+Shift+braceleft      move container to workspace $ws3
-bindsym Group1+$mod+Shift+braceright     move container to workspace $ws4
-bindsym Group1+$mod+Shift+1              move container to workspace $ws5
-bindsym Group1+$mod+Shift+equal          move container to workspace $ws6
-bindsym Group1+$mod+Shift+asterisk       move container to workspace $ws7
-bindsym Group1+$mod+Shift+2              move container to workspace $ws8
-bindsym Group1+$mod+Shift+plus           move container to workspace $ws9
-bindsym Group1+$mod+Shift+bracketright   move container to workspace $ws10
+bindsym Group1+$mod+Shift+dollar         move container to workspace $ws1
+bindsym Group1+$mod+Shift+ampersand      move container to workspace $ws2
+bindsym Group1+$mod+Shift+bracketleft    move container to workspace $ws3
+bindsym Group1+$mod+Shift+braceleft      move container to workspace $ws4
+bindsym Group1+$mod+Shift+braceright     move container to workspace $ws5
+bindsym Group1+$mod+Shift+1              move container to workspace $ws6
+bindsym Group1+$mod+Shift+equal          move container to workspace $ws7
+bindsym Group1+$mod+Shift+asterisk       move container to workspace $ws8
+bindsym Group1+$mod+Shift+2              move container to workspace $ws9
+bindsym Group1+$mod+Shift+plus           move container to workspace $ws10
 
 ## US
 # change focus
