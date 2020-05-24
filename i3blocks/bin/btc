@@ -1,0 +1,9 @@
+#!/bin/sh
+RES=`curl https://bridge.balthazar.dev/crypto\?coin\=btc\&preferred\=usd`
+PRICE=`echo $RES | jq '.current_price'`
+CHANGE=`echo $RES | jq '.price_change_24h'`
+
+echo ₿ $PRICE;
+echo $CHANGE;
+
+if [[ "${CHANGE:0:1}" = - ]]; then echo "#FF2800"; else echo "#06C258"; fi

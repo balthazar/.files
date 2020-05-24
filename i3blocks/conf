@@ -19,6 +19,12 @@ font_weight=bold
 interval=persist
 markup=pango
 
+[btc]
+command=$SCRIPT_DIR/btc
+font=monospace
+font_weight=bold
+interval=30
+
 [aur_updates]
 command=$SCRIPT_DIR/yay
 label=YAY 
