@@ -9,8 +9,6 @@ font=${font:-monospace}
 font_weight=${font_weight:-bold}
 while :
 do
-# Output current layout:
-    xkb-switch -p | awk -v font="$font" -v font_weight="$font_weight" '{print "<span font_family=\""font"\"  font_weight=\""font_weight"\">"toupper($0)"</span>"}' || sleep 1
-# Wait for layout change:
-    xkb-switch -w
+    layout=$(setxkbmap -query | perl -ne 'print "$1\n" if /layout: *(.*)/');
+    echo $layout | awk -v font="$font" -v font_weight="$font_weight" '{print "<span font_family=\""font"\"  font_weight=\""font_weight"\">"toupper($0)"</span>"}' || sleep 1
 done

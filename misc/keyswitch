@@ -1,0 +1,4 @@
+#!/bin/bash
+
+layout=$(setxkbmap -query | perl -ne 'print "$1\n" if /layout: *(.*)/');
+if [[ $layout == "dvp" ]]; then setxkbmap us; else setxkbmap dvp; fi

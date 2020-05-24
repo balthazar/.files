@@ -44,19 +44,17 @@ alias t='yarn test'
 
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
 
-if [[ `uname` != 'Darwin' ]]; then
+if [[ `uname` == 'Linux' ]]; then
   alias pbcopy='xsel --clipboard --input'
-  alias u='sudo pacman -Syyu'
+  alias u='yay -Syyu'
 fi
 
 # Functions
 # ---------
-function y() { yarn $@ --ignore-engines ;}
 
 function whitescale() { convert images/$@.png -channel RGB -fuzz 99% -fill white -opaque black images/$@-white.png ;}
 
 if [[ $(uname) == 'Linux' ]]; then
-  function light() { sudo ~/.bin/light_.sh $@ ;}
   function off() { sudo shutdown 0 ;}
 fi
 

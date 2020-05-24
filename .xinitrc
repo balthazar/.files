@@ -3,7 +3,7 @@
 xset r rate 150 200
 xset -b
 xbindkeys
-setxkbmap dvp &
+setxkbmap dvp
 numlockx &
 
 xrb merge ~/.Xresources

@@ -19,7 +19,8 @@ exec twitch-gui
 assign [class="chatty"] "5"
 assign [class="twitch-gui"] "5"
 
-exec --no-startup-id setxkbmap dvp,us -option 'grp:alt_shift_toggle'
+#exec --no-startup-id setxkbmap dvp,us -option 'grp:alt_shift_toggle'
+bindsym $mod+Tab exec "sh ~/git/.files/misc/keyswitch"
 
 bindsym $mod+Return exec kitty
 bindsym $mod+c exec chromium
@@ -101,7 +102,6 @@ mode "resize" {
 }
 
 bindsym $mod+Shift+r mode "resize"
-bindsym $mod+Tab      workspace back_and_forth
 
 for_window [class="GLava"] border pixel 0 floating enable sticky enable focus_follows_mouse no
 
@@ -299,7 +299,6 @@ bindsym Group1+$mod+parenleft workspace $ws6
 bindsym Group1+$mod+equal workspace $ws7
 bindsym Group1+$mod+asterisk workspace $ws8
 bindsym Group1+$mod+parenright workspace $ws9
-bindsym Group1+$mod+plus workspace $ws10
 
 # move focused container to workspace
 bindsym Group1+$mod+Shift+dollar         move container to workspace $ws1
@@ -311,7 +310,6 @@ bindsym Group1+$mod+Shift+1              move container to workspace $ws6
 bindsym Group1+$mod+Shift+equal          move container to workspace $ws7
 bindsym Group1+$mod+Shift+asterisk       move container to workspace $ws8
 bindsym Group1+$mod+Shift+2              move container to workspace $ws9
-bindsym Group1+$mod+Shift+plus           move container to workspace $ws10
 
 ## US
 # change focus
@@ -327,25 +325,19 @@ bindsym Group2+$mod+Shift+k move up
 bindsym Group2+$mod+Shift+l move right
 
 # switch to workspace
-bindsym Group2+$mod+1 workspace $ws1
-bindsym Group2+$mod+2 workspace $ws2
-bindsym Group2+$mod+3 workspace $ws3
-bindsym Group2+$mod+4 workspace $ws4
-bindsym Group2+$mod+5 workspace $ws5
-bindsym Group2+$mod+6 workspace $ws6
-bindsym Group2+$mod+7 workspace $ws7
-bindsym Group2+$mod+8 workspace $ws8
-bindsym Group2+$mod+9 workspace $ws9
-bindsym Group2+$mod+0 workspace $ws10
+bindsym F1 workspace $ws1
+bindsym F2 workspace $ws2
+bindsym F3 workspace $ws3
+bindsym F4 workspace $ws4
+bindsym F5 workspace $ws5
+bindsym F6 workspace $ws6
+bindsym F7 workspace $ws7
 
 # # move focused container to workspace
-bindsym Group2+$mod+Shift+1 move container to workspace $ws1
-bindsym Group2+$mod+Shift+2 move container to workspace $ws2
-bindsym Group2+$mod+Shift+3 move container to workspace $ws3
-bindsym Group2+$mod+Shift+4 move container to workspace $ws4
-bindsym Group2+$mod+Shift+5 move container to workspace $ws5
-bindsym Group2+$mod+Shift+6 move container to workspace $ws6
-bindsym Group2+$mod+Shift+7 move container to workspace $ws7
-bindsym Group2+$mod+Shift+8 move container to workspace $ws8
-bindsym Group2+$mod+Shift+9 move container to workspace $ws9
-bindsym Group2+$mod+Shift+0 move container to workspace $ws10
+bindsym Shift+F1 move container to workspace $ws1
+bindsym Shift+F2 move container to workspace $ws2
+bindsym Shift+F3 move container to workspace $ws3
+bindsym Shift+F4 move container to workspace $ws4
+bindsym Shift+F5 move container to workspace $ws5
+bindsym Shift+F6 move container to workspace $ws6
+bindsym Shift+F7 move container to workspace $ws7
