@@ -52,6 +52,7 @@ fi
 # Functions
 # ---------
 
+function y() { yarn $@ --ignore-engines }
 function whitescale() { convert images/$@.png -channel RGB -fuzz 99% -fill white -opaque black images/$@-white.png ;}
 
 if [[ $(uname) == 'Linux' ]]; then

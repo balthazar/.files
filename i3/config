@@ -14,7 +14,6 @@ exec telegram-desktop
 assign [class="Slack"] "3 coms"
 assign [class="Telegram"] "3 coms"
 
-exec chatty
 exec twitch-gui
 assign [class="chatty"] "5"
 assign [class="twitch-gui"] "5"
