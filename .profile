@@ -20,7 +20,8 @@ alias snips='cd ~/.vim/bundle/ultisnips/ultiSnips'
 alias bnpm='npm --userconfig=$HOME/.bnpmrc'
 alias gre='grep -rni'
 alias dado='ssh me@balthazar.dev'
-alias bigdaddy='ssh root@ns5001069.ip-167-114-64.net'
+alias bigdaddy='ssh root@dash.ashlar.io'
+alias feh='feh --conversion-timeout 1'
 
 alias l='ls -lah'
 alias mpv='mpv --input-ipc-server=/tmp/mpvsocket'
@@ -32,7 +33,7 @@ alias gitk='git checkout'
 alias gitp='git push'
 alias pull='git pull'
 alias gitt='git tag -s'
-alias gg='cd ~/git'
+alias g='cd ~/git'
 alias a='cd ~/git/ashlar'
 alias dl='cd ~/Downloads'
 
@@ -53,7 +54,7 @@ fi
 # ---------
 
 function y() { yarn $@ --ignore-engines }
-function whitescale() { convert images/$@.png -channel RGB -fuzz 99% -fill white -opaque black images/$@-white.png ;}
+function whitescale() { convert $@.png -channel RGB -fuzz 99% -fill white -opaque black $@-white.png ;}
 
 if [[ $(uname) == 'Linux' ]]; then
   function off() { sudo shutdown 0 ;}

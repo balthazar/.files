@@ -1,4 +1,6 @@
 #!/bin/bash
 
 layout=$(setxkbmap -query | perl -ne 'print "$1\n" if /layout: *(.*)/');
-if [[ $layout == "dvp" ]]; then setxkbmap us; else setxkbmap dvp; fi
+if [[ $layout == "dvp" ]]; then setxkbmap ru -variant multilingual; fi
+if [[ $layout == "ru" ]]; then setxkbmap us; fi
+if [[ $layout == "us" ]]; then setxkbmap dvp; fi

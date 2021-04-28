@@ -8,14 +8,15 @@ setopt HIST_IGNORE_ALL_DUPS
 # Paths
 # -----
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$HOME/.ebcli-virtual-env/executables
 
 export PATH=$PATH:~/Library/Python/2.7/bin
 export PATH=./node_modules/.bin:$PATH
+export PATH=/opt/anaconda/bin:$PATH
 
 # Source
 # ------

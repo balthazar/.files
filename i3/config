@@ -9,14 +9,11 @@ font pango:Fira Code 8
 # APPLICATIONS
 
 exec chromium
-exec slack
 exec telegram-desktop
-assign [class="Slack"] "3 coms"
-assign [class="Telegram"] "3 coms"
-
-exec twitch-gui
-assign [class="chatty"] "5"
-assign [class="twitch-gui"] "5"
+exec slack
+assign [class="Chromium"] "1"
+assign [class="Telegram"] "3"
+assign [class="Slack"] "3"
 
 #exec --no-startup-id setxkbmap dvp,us -option 'grp:alt_shift_toggle'
 bindsym $mod+Tab exec "sh ~/git/.files/misc/keyswitch"
@@ -66,11 +63,18 @@ bindsym $mod+Shift+a focus child
 bindsym $mod+Shift+Return    move scratchpad
 bindsym $mod+m               scratchpad show
 
+workspace 1 output DP-4
+workspace 2 output DP-4
+workspace 3 output DP-4 
+workspace 4 output DP-4
+workspace 5 output DP-2
+workspace 6 output DP-2
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 main"
-set $ws2 "2 dev"
-set $ws3 "3 coms"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -86,7 +90,7 @@ bindsym $mod+Shift+Control+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Control+s exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+minus exec maim -d 0.5 -s "$(date +%s).png"
+bindsym $mod+minus exec maim -s "screens/$(date +%s).png"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -283,32 +287,32 @@ bindsym Group1+$mod+n focus up
 bindsym Group1+$mod+s focus right
 
 # move focused window
-bindsym Group1+$mod+Shift+h move left
-bindsym Group1+$mod+Shift+t move down
-bindsym Group1+$mod+Shift+n move up
-bindsym Group1+$mod+Shift+s move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+t move down
+bindsym $mod+Shift+n move up
+bindsym $mod+Shift+s move right
 
 # switch to workspace
-bindsym Group1+$mod+dollar workspace $ws1
-bindsym Group1+$mod+ampersand workspace $ws2
-bindsym Group1+$mod+bracketleft workspace $ws3
-bindsym Group1+$mod+braceleft workspace $ws4
-bindsym Group1+$mod+braceright workspace $ws5
-bindsym Group1+$mod+parenleft workspace $ws6
-bindsym Group1+$mod+equal workspace $ws7
-bindsym Group1+$mod+asterisk workspace $ws8
-bindsym Group1+$mod+parenright workspace $ws9
+bindsym $mod+dollar workspace $ws1
+bindsym $mod+ampersand workspace $ws2
+bindsym $mod+bracketleft workspace $ws3
+bindsym $mod+braceleft workspace $ws4
+bindsym $mod+braceright workspace $ws5
+bindsym $mod+parenleft workspace $ws6
+bindsym $mod+equal workspace $ws7
+bindsym $mod+asterisk workspace $ws8
+bindsym $mod+parenright workspace $ws9
 
 # move focused container to workspace
-bindsym Group1+$mod+Shift+dollar         move container to workspace $ws1
-bindsym Group1+$mod+Shift+ampersand      move container to workspace $ws2
-bindsym Group1+$mod+Shift+bracketleft    move container to workspace $ws3
-bindsym Group1+$mod+Shift+braceleft      move container to workspace $ws4
-bindsym Group1+$mod+Shift+braceright     move container to workspace $ws5
-bindsym Group1+$mod+Shift+1              move container to workspace $ws6
-bindsym Group1+$mod+Shift+equal          move container to workspace $ws7
-bindsym Group1+$mod+Shift+asterisk       move container to workspace $ws8
-bindsym Group1+$mod+Shift+2              move container to workspace $ws9
+bindsym $mod+Shift+dollar         move container to workspace $ws1
+bindsym $mod+Shift+ampersand      move container to workspace $ws2
+bindsym $mod+Shift+bracketleft    move container to workspace $ws3
+bindsym $mod+Shift+braceleft      move container to workspace $ws4
+bindsym $mod+Shift+braceright     move container to workspace $ws5
+bindsym $mod+Shift+1              move container to workspace $ws6
+bindsym $mod+Shift+equal          move container to workspace $ws7
+bindsym $mod+Shift+asterisk       move container to workspace $ws8
+bindsym $mod+Shift+2              move container to workspace $ws9
 
 ## US
 # change focus
@@ -328,9 +332,6 @@ bindsym F1 workspace $ws1
 bindsym F2 workspace $ws2
 bindsym F3 workspace $ws3
 bindsym F4 workspace $ws4
-bindsym F5 workspace $ws5
-bindsym F6 workspace $ws6
-bindsym F7 workspace $ws7
 
 # # move focused container to workspace
 bindsym Shift+F1 move container to workspace $ws1
