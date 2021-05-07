@@ -55,7 +55,8 @@ Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug '42Zavattas/vim-snippets'
 Plug 'Raimondi/delimitMate'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
@@ -203,13 +204,50 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDDefaultAlign = 'left'
 
-" CtrlP
-let g:ctrlp_show_hidden = 1
+" FZF
+let g:fzf_layout = { 'down': '~80%' }
+nnoremap <c-f> :Find<space>
+nnoremap <c-p> :Files<cr>
+nnoremap <Leader>f :Find<space><C-r><C-w><cr>
+command! -bang -nargs=* Find call fzf#vim#grep(
+  \ 'rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --follow --color "always" '.shellescape(<q-args>),
+  \ 1,
+  \ fzf#vim#with_preview(),
+  \ <bang>0
+\ )
 
-let g:ctrlp_custom_ignore = {
-  \   'dir' : '\.next\|\.git$\|build$\|node_modules\|dist\|target' ,
-  \   'file' : '\v\.(exe|dll|lib)$'
-  \ }
+" custom files preview
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, <bang>0)
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" create file with subdirectories if needed :E
+function s:MKDir(...)
+    if         !a:0
+           \|| stridx('`+', a:1[0])!=-1
+           \|| a:1=~#'\v\\@<![ *?[%#]'
+           \|| isdirectory(a:1)
+           \|| filereadable(a:1)
+           \|| isdirectory(fnamemodify(a:1, ':p:h'))
+        return
+    endif
+    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
+endfunction
+command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
 
 " ale
 let g:ale_linters = { 'javascript': ['xo'] }
