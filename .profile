@@ -39,9 +39,10 @@ alias dl='cd ~/Downloads'
 
 alias lint='eslint src'
 alias watch='npm run watch'
-alias s='yarn start'
-alias b='yarn build'
-alias t='yarn test'
+alias s='npm start'
+alias b='npm run build'
+alias t='npm run test'
+alias d='npm run dev'
 
 alias scaffold='git config --local user.name TheScaffolder && git config --local user.email spam@forpurpose.io && git commit --amend --author "TheScaffolder <spam@forpurpose.io>" && git config --local --unset user.email && git config --local --unset user.name'
 

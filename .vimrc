@@ -205,16 +205,10 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDDefaultAlign = 'left'
 
 " FZF
-let g:fzf_layout = { 'down': '~80%' }
+let g:fzf_layout = { 'down': '~50%' }
 nnoremap <c-f> :Find<space>
-nnoremap <c-p> :Files<cr>
 nnoremap <Leader>f :Find<space><C-r><C-w><cr>
-command! -bang -nargs=* Find call fzf#vim#grep(
-  \ 'rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --follow --color "always" '.shellescape(<q-args>),
-  \ 1,
-  \ fzf#vim#with_preview(),
-  \ <bang>0
-\ )
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
 " custom files preview
 command! -bang -nargs=? -complete=dir Files
