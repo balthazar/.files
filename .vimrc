@@ -47,6 +47,10 @@ endif
 
 filetype off
 
+if empty(glob('~/.vim/plugged'))
+  autocmd VimEnter * PlugInstall --sync
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -241,10 +245,11 @@ function s:MKDir(...)
     endif
     return mkdir(fnamemodify(a:1, ':p:h'), 'p')
 endfunction
+
 command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
 
 " ale
-let g:ale_linters = { 'javascript': ['xo'] }
+let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['prettier'], 'typescript': ['prettier'] }
 
 let g:ale_fix_on_save = 1
