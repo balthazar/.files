@@ -57,6 +57,8 @@ fi
 function y() { yarn $@ --ignore-engines }
 function whitescale() { convert $@.png -channel RGB -fuzz 99% -fill white -opaque black $@-white.png ;}
 
+function secretToEnv() { kubectl get secrets -n $@ -o json | jq '.data | map_values(@base64d)' | yq -P | sed 's/: /=/' }
+
 if [[ $(uname) == 'Linux' ]]; then
   function off() { sudo shutdown 0 ;}
 fi
