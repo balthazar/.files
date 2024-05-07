@@ -1,11 +1,12 @@
 [user]
-  name = Balthazar Gronon
+  name = Balthazar
   email = git@balthazar.dev
   signingkey = 60CFC855069EBE4E
 [color]
   ui = true
 [push]
   default = simple
+  autoSetupRemote = true
 [core]
   editor = vim
   pager = less -S
